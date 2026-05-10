@@ -8,7 +8,7 @@ class TPQueue {
     struct Node {
         T data;
         Node* next;
-        Node(const T& value) : data(value), next(nullptr) {}
+        explicit Node(const T& value) : data(value), next(nullptr) {}
     };
     Node* head;  // указатель на начало очереди
     int count;   // количество элементов в очереди
@@ -40,7 +40,8 @@ class TPQueue {
         } else {
             // Поиск места для вставки (сохраняем порядок для равных приоритетов)
             Node* current = head;
-            while (current->next != nullptr && current->next->data.prior >= item.prior) {
+            while (current->next != nullptr && 
+            current->next->data.prior >= item.prior) {
                 current = current->next;
             }
             newNode->next = current->next;
