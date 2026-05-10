@@ -38,9 +38,8 @@ class TPQueue {
             newNode->next = head;
             head = newNode;
         } else {
-            // Поиск места для вставки (сохраняем порядок для равных приоритетов)
             Node* current = head;
-            while (current->next != nullptr && 
+            while (current->next != nullptr &&
             current->next->data.prior >= item.prior) {
                 current = current->next;
             }
