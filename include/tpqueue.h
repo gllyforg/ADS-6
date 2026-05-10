@@ -4,8 +4,7 @@
 #include <stdexcept>
 template<typename T>
 class TPQueue {
-  class TPQueue {
-private:
+ private:
     struct Node {
         T data;
         Node* next;
@@ -13,7 +12,8 @@ private:
     };
     Node* head;  // указатель на начало очереди
     int count;   // количество элементов в очереди
-public:
+
+ public:
     // Конструктор
     TPQueue() : head(nullptr), count(0) {}
     // Деструктор
@@ -25,7 +25,7 @@ public:
     // Проверка на пустоту
     bool isEmpty() const {
         return head == nullptr;
-    } 
+    }
     // Получение количества элементов
     int size() const {
         return count;
@@ -77,7 +77,7 @@ public:
     TPQueue(const TPQueue&) = delete;
     TPQueue& operator=(const TPQueue&) = delete;
     // Разрешаем перемещение
-    TPQueue(TPQueue&& other) noexcept 
+    TPQueue(TPQueue&& other) noexcept
         : head(other.head), count(other.count) {
         other.head = nullptr;
         other.count = 0;
